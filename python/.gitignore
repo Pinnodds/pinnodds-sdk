@@ -1,0 +1,13 @@
+# The monorepo root .gitignore blanket-ignores *.py (a scraper scratch rule).
+# This directory is a real published package, so re-include its sources —
+# without this line git tracks the pyproject and README but none of the code,
+# which is how a sibling project once shipped an empty wheel.
+!*.py
+
+# Build + test artefacts
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/

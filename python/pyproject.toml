@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pinnodds"
+version = "0.1.0"
+description = "Real-time Pinnacle odds and drop alerts for Python — live and prematch REST snapshots plus SSE odds-drop streams from pinnodds.com, with full quarter-line depth and player props."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+authors = [{ name = "pinnodds", email = "info@pinnodds.com" }]
+keywords = [
+  "pinnacle", "pinnacle-api", "pinnacle-odds", "odds", "odds-api",
+  "sports-odds", "betting", "sports-betting", "arbitrage", "dropping-odds",
+  "odds-drop", "steam-moves", "closing-line-value", "sse", "real-time",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = ["requests>=2.20"]
+
+[project.urls]
+Homepage = "https://pinnodds.com"
+Documentation = "https://pinnodds.com/docs"
+"API reference (LLM-friendly)" = "https://pinnodds.com/llms-full.txt"
+
+[tool.hatch.build]
+# The monorepo's root .gitignore blanket-ignores *.py (a scraper scratch rule);
+# hatchling honours VCS ignores by default and that once shipped an EMPTY wheel
+# on a sibling project. Never let repo ignore rules shape package contents.
+ignore-vcs = true
+exclude = ["**/__pycache__", "**/*.pyc"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pinnodds"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/pinnodds", "README.md", "LICENSE", "tests"]

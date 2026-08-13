@@ -1,0 +1,43 @@
+{
+  "name": "pinnodds",
+  "version": "0.1.0",
+  "description": "Official Node.js client for the pinnodds Pinnacle odds API — live and prematch REST snapshots, real-time odds-drop SSE streams, quarter-line depth and player props. Zero dependencies, TypeScript types included.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "pinnacle",
+    "pinnacle-api",
+    "pinnacle-odds",
+    "odds",
+    "odds-api",
+    "sports-odds",
+    "betting",
+    "sports-betting",
+    "arbitrage",
+    "dropping-odds",
+    "odds-drop",
+    "steam-moves",
+    "closing-line-value",
+    "sse",
+    "websocket",
+    "real-time"
+  ],
+  "author": "pinnodds (https://pinnodds.com)",
+  "license": "MIT",
+  "homepage": "https://pinnodds.com",
+  "bugs": {
+    "url": "https://pinnodds.com/docs"
+  }
+}
