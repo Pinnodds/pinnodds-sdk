@@ -117,6 +117,26 @@ Authentication is a single header: `x-api-key: YOUR_KEY` (the streams accept
 - **One concurrent stream per account per stream type** (live + prematch can
   run in parallel).
 
+## Examples
+
+Complete programs in [examples/](examples/), each runnable with your key:
+
+- [No-vig fair odds](examples/python/no_vig_fair_odds.py): Pinnacle moneylines with the margin removed
+- [Line history to CSV](examples/python/line_history_csv.py): track lines to closing, for CLV
+- [Drops to Telegram](examples/python/drops_to_telegram.py): odds-drop alerts in a chat (SSE, or polled on the free key)
+- [Drops to Discord](examples/node/drops-to-discord.mjs): pushed alerts to a webhook
+
+## Use it from an AI assistant (MCP)
+
+pinnodds runs a remote MCP server at `https://mcp.pinnodds.com/mcp`, so Claude,
+Cursor or Codex can query live Pinnacle odds directly:
+
+```bash
+claude mcp add --transport http pinnodds https://mcp.pinnodds.com/mcp   --header "Authorization: Bearer $PINNODDS_KEY"
+```
+
+Setup for every client: [pinnodds.com/docs#mcp](https://pinnodds.com/docs#mcp).
+
 ## Documentation
 
 - [Full API reference](https://pinnodds.com/docs) — every endpoint, parameter and response shape
